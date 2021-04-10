@@ -1,0 +1,15 @@
+extends ../template
+
+block variables
+	- var title = 'Главная'
+
+block content
+	h1 Главная
+		p Это сайт-визитка для ознакомления с технологиями Gulp и Pug.
+		mixin list( items )
+			each item in items 
+				li
+					a(href=item.href)=item.text
+		+list( [ {href: 'index.html', text: 'Главная'}, {href: 'about.html', text: 'Обо мне'}, {href: 'contacts.html', text: 'Контакты'} ] )
+
+
